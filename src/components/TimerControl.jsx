@@ -5,16 +5,17 @@ function TimerControl() {
   const [toggleShow, setToggleShow] = useState(false);
 
   const handleToggle = () => {
-    setToggleShow(!toggleShow)
-  }
+    setToggleShow(!toggleShow);
+  };
 
   return (
     <div>
       <h4>Controll of Timer</h4>
-      <button onClick={handleToggle}>{toggleShow ? "Hide Timer" : "Show Timer"}</button>
+      <button onClick={handleToggle}>
+        {toggleShow ? "Hide Timer" : "Show Timer"}
+      </button>
 
-      {toggleShow === true && <Timer start={toggleShow}/>}
-      
+      {toggleShow === true && <Timer start={toggleShow} />}
     </div>
   );
 }

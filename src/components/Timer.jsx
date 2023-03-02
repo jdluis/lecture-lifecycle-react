@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function Timer(props) {
   const [timeValue, setTimeValue] = useState(0);
 
-  //! Ejemplo funcional de timer sin useEffect
+  //! Example funcional de timer sin useEffect
   /* const handleTimerRender = () => {
     setInterval(() => {
       setTimeValue((actualTimeValue) => actualTimeValue + 1);
@@ -14,7 +14,7 @@ function Timer(props) {
     handleTimerRender();
   } */
 
-  //! Ejemplo de useEffect separado
+  //! Teory of lifecycle with useEffect
   /*  useEffect(() => {
     console.log("Compomemt Did Mount");
   }, []);
@@ -30,19 +30,19 @@ function Timer(props) {
   }, []);
  */
 
-  //! Ejemplo efectivo y eficente con useEffect
-  
+  //! Example with useEffect
+
   useEffect(() => {
     console.log("Compomemt Did Mount");
 
-   const intervalTimer = setInterval(() => {
+    const intervalTimer = setInterval(() => {
       console.log("Compomemt Did Update");
       setTimeValue((actualTimeValue) => actualTimeValue + 1);
     }, 1000);
 
     return () => {
       console.log("Compomemt Did Unmount");
-      clearInterval(intervalTimer)
+      clearInterval(intervalTimer);
     };
   }, [props.start]);
 
